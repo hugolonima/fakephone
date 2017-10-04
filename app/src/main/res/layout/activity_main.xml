@@ -19,43 +19,51 @@
         android:layout_below="@+id/phone_number"
         android:layout_marginStart="13dp"
         android:layout_marginTop="25dp"
-        android:width="20dp"
-        android:height="20dp"
+        android:width="60dp"
+        android:height="60dp"
         android:onClick="clicat"
         android:text="1" />
 
     <Button
         android:id="@+id/n2"
+        android:width="60dp"
+        android:height="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/n1"
-        android:layout_marginStart="23dp"
-        android:layout_toEndOf="@+id/n1"
         android:onClick="clicat"
-        android:text="2" />
+        android:text="2"
+        android:layout_alignBaseline="@+id/n1"
+        android:layout_alignBottom="@+id/n1"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/n3"
+        android:width="60dp"
+        android:height="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/n2"
-        android:layout_marginStart="37dp"
-        android:layout_toEndOf="@+id/n2"
         android:onClick="clicat"
-        android:text="3" />
+        android:text="3"
+        android:layout_alignBaseline="@+id/n2"
+        android:layout_alignBottom="@+id/n2"
+        android:layout_alignStart="@+id/btn_call" />
 
     <Button
         android:id="@+id/n4"
+        android:width="60dp"
+        android:height="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/n1"
-        android:layout_marginTop="38dp"
-        android:layout_toStartOf="@+id/n2"
         android:onClick="clicat"
-        android:text="4" />
+        android:text="4"
+        android:layout_below="@+id/n1"
+        android:layout_alignStart="@+id/n1"
+        android:layout_marginTop="12dp" />
 
     <Button
         android:id="@+id/n5"
+        android:width="60dp"
+        android:height="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/n4"
@@ -65,6 +73,8 @@
 
     <Button
         android:id="@+id/n6"
+        android:width="60dp"
+        android:height="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/n5"
@@ -74,24 +84,32 @@
 
     <Button
         android:id="@+id/n7"
+        android:width="60dp"
+        android:height="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/n4"
-        android:layout_centerVertical="true"
         android:onClick="clicat"
-        android:text="7" />
+        android:text="7"
+        android:layout_alignBaseline="@+id/n8"
+        android:layout_alignBottom="@+id/n8"
+        android:layout_alignStart="@+id/n4" />
 
     <Button
         android:id="@+id/n8"
+        android:width="60dp"
+        android:height="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/n5"
-        android:layout_alignTop="@+id/n7"
         android:onClick="clicat"
-        android:text="8" />
+        android:text="8"
+        android:layout_below="@+id/n5"
+        android:layout_alignStart="@+id/n5"
+        android:layout_marginTop="16dp" />
 
     <Button
         android:id="@+id/n9"
+        android:width="60dp"
+        android:height="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/n6"
@@ -101,13 +119,15 @@
 
     <Button
         android:id="@+id/n10"
+        android:width="60dp"
+        android:height="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/n8"
-        android:layout_below="@+id/n8"
-        android:layout_marginTop="41dp"
         android:onClick="clicat"
-        android:text="0" />
+        android:text="0"
+        android:layout_below="@+id/n8"
+        android:layout_alignStart="@+id/n8"
+        android:layout_marginTop="13dp" />
 
     <Button
         android:id="@+id/btn_borrar"
@@ -116,7 +136,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/n7"
         android:layout_marginBottom="27dp"
-        android:text="Esborra" />
+        android:onClick="borrar"
+        android:text="@string/esborrar" />
 
     <Button
         android:id="@+id/btn_call"
@@ -125,5 +146,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/btn_borrar"
         android:layout_marginEnd="20dp"
-        android:text="Truca" />
+        android:onClick="llamar"
+        android:text="@string/trucar" />
 </android.widget.RelativeLayout>

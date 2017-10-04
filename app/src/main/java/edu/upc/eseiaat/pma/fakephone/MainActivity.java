@@ -10,52 +10,26 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Botones de los números
-    private Button btn_1 = (Button) findViewById(R.id.n1);
-    private Button btn_2 = (Button) findViewById(R.id.n2);
-    private Button btn_3 = (Button) findViewById(R.id.n3);
-    private Button btn_4 = (Button) findViewById(R.id.n4);
-    private Button btn_5 = (Button) findViewById(R.id.n5);
-    private Button btn_6 = (Button) findViewById(R.id.n6);
-    private Button btn_7 = (Button) findViewById(R.id.n7);
-    private Button btn_8 = (Button) findViewById(R.id.n8);
-    private Button btn_9 = (Button) findViewById(R.id.n9);
-    private Button btn_0 = (Button) findViewById(R.id.n10);
+
 
     //Botones de borrar (esborrar) y llamar (trucar)
 
-    private Button btn_borrar = (Button) findViewById(R.id.btn_borrar);
-    private Button btn_llamar = (Button) findViewById(R.id.btn_call);
+     Button btn_borrar;
+     Button btn_llamar;
 
     //Edit Text
-    private EditText phone_text = (EditText) findViewById(R.id.phone_number);
+     EditText phone_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btn_borrar = (Button) findViewById(R.id.btn_borrar);
+        btn_llamar= (Button) findViewById(R.id.btn_call);
+        phone_text = (EditText) findViewById(R.id.phone_number);
 
 
-        //TODO : Un escuchador genérico
-        //Hay que hacer un escuchador y aplicárselo a los diversos métodos
-        //TODO : Hacer métodos, unos que lean el número del texto y lo añadan al Edit
-        // TODO : text, en cuanto a los otros hemos de dividirlos en dos : uno que borre
-        //TODO: y otro que saque un toast con el mensaje de "llamando"
-
-        //actualizar();
-        btn_borrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                borrar();
-            }
-        });
-        btn_llamar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                llamar();
-            }
-        });
 
     }
 
@@ -70,14 +44,16 @@ public class MainActivity extends AppCompatActivity {
         String new_number = current_number.concat(btn_number);
         phone_text.setText(new_number);
     }
-    private void borrar(){
-        phone_text.setText("");
+    public void borrar(View v){
+        //phone_text.setText("");
 
-        /*String current = phone_text.getText().toString();
-        String actual = current.substring(0,current.length()-2);
-        phone_text.setText(actual);*/
+        String current = phone_text.getText().toString();
+        if(current.length() > 0) {
+            String actual = current.substring(0, current.length() - 1);
+            phone_text.setText(actual);
+        }
     }
-    private void llamar(){
+    public void llamar(View v){
         String num_actual = phone_text.getText().toString();
         Toast.makeText(this, "Trucant al "+ num_actual + "..." , Toast.LENGTH_SHORT).show();
     }

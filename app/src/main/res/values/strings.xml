@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Fake Phone</string>
+    <string name="trucar" >Trucar</string>
+    <string name="esborrar" >Esborrar</string>
 </resources>
