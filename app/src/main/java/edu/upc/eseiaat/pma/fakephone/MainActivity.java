@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         String btn_number = button.getText().toString();
         String new_number = current_number.concat(btn_number);
         phone_text.setText(new_number);
+        phone_text.setSelection(new_number.length());
     }
     public void borrar(View v){
         //phone_text.setText("");
@@ -51,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
         if(current.length() > 0) {
             String actual = current.substring(0, current.length() - 1);
             phone_text.setText(actual);
+            phone_text.setSelection(actual.length());
         }
+
     }
     public void llamar(View v){
         String num_actual = phone_text.getText().toString();
