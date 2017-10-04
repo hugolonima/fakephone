@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        //Vamoh a empezar a hacer cositas
 
         //TODO : Un escuchador genérico
         //Hay que hacer un escuchador y aplicárselo a los diversos métodos
@@ -45,7 +44,18 @@ public class MainActivity extends AppCompatActivity {
         //TODO: y otro que saque un toast con el mensaje de "llamando"
 
         //actualizar();
-
+        btn_borrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                borrar();
+            }
+        });
+        btn_llamar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                llamar();
+            }
+        });
 
     }
 
@@ -62,9 +72,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void borrar(){
         phone_text.setText("");
-        
-        //Vamoh a imaginar que lo que quiere es borrar el último, que mi señora es una pesada
-        
+
         /*String current = phone_text.getText().toString();
         String actual = current.substring(0,current.length()-2);
         phone_text.setText(actual);*/
@@ -73,6 +81,5 @@ public class MainActivity extends AppCompatActivity {
         String num_actual = phone_text.getText().toString();
         Toast.makeText(this, "Trucant al "+ num_actual + "..." , Toast.LENGTH_SHORT).show();
     }
-    
 
 }
